@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>EnergyGrids</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white py-3">
+        <div class="container">            <a class="navbar-brand" href="index.html">
+                <img src="logo_2 iuiu.png" alt="Energrids Logo" width="150">
+            </a>
+            <div class="nav-right">
+                <span class="nav-link">Select a Project</span>
+                <a href="#" class="btn btn-outline-primary rounded-pill">Logout & Exit <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="progress" style="height: 4px;">
+        <div class="progress-bar bg-success" style="width: 100%"></div>
+    </div>    <main class="project-container py-5">        <div class="mx-2 mb-5 mt-7 inline-flex items-center space-x-2">
+            <div class="project-icon">SF-200</div>
+            <div>
+                <h2 class="text-xl font-semibold text-aluminium-grey-800">Solar Farm (SF-200)</h2>
+                <span class="text-base text-aluminium-grey-600">Managed by <strong class="font-semibold text-aluminium-grey-700">Energrids</strong></span>
+            </div>
+        </div>
+
+        <div class="lg:flex lg:gap-8">
+            <div class="lg:flex-grow">
+                <!-- About the Project -->
+                <div class="card p-6 mb-6">                    <h2 class="text-xl font-semibold mb-4">About the Project</h2>
+                    <p class="text-aluminium-grey-600">
+                        Solar Farm (SF-200) is our flagship solar project located in Warangal, featuring advanced solar panel technology
+                        and smart monitoring systems. The project uses high-efficiency solar panels to maximize power generation
+                        and provides sustainable energy solutions to our customers.
+                    </p>
+
+                    <!-- Bill Savings Info -->
+                    <div class="bill-savings">
+                        <div class="bill-savings-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24">
+                                <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                            </svg>
+                        </div>
+                        <p class="text-midnight-green-500 font-medium">
+                            Every unit (kWh) from this project discounts <span class="font-semibold">₹4.10</span> off your power bill
+                            <br>
+                            <small class="text-muted">(Price includes 18% GST)</small>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project Overview -->
+                <div class="card p-6 mb-6">
+                    <h2 class="text-xl font-semibold mb-4">Overview</h2>                    <div class="project-info-grid">
+                        <div class="info-card">
+                            <div class="info-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M20 12H4L2 22h20l-2-10zm-1.64 2l.4 2H13v-2h5.36zM11 14v2H5.24l.4-2H11zm-6.16 4H11v2H4.44l.4-2zM13 20v-2h6.16l.4 2H13z"/>
+                                </svg>
+                            </div>
+                            <div class="info-label">Total Capacity</div>
+                            <div class="info-value">24.1 kW</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M19.88 18.47c.44-.7.7-1.51.7-2.39 0-2.49-2.01-4.5-4.5-4.5s-4.5 2.01-4.5 4.5 2.01 4.5 4.49 4.5c.88 0 1.7-.26 2.39-.7L21.58 23 23 21.58l-3.12-3.11zm-3.8.11a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                                </svg>
+                            </div>
+                            <div class="info-label">Current Generation</div>
+                            <div class="info-value">18.3 kW</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/>
+                                </svg>
+                            </div>
+                            <div class="info-label">Operational Period</div>
+                            <div class="info-value">2025-2040</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                                </svg>
+                            </div>
+                            <div class="info-label">Unit Price</div>
+                            <div class="info-value">₹4.10 (incl. GST)</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Real-time Generation -->
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold mb-3">Real-time Power Generation</h3>
+                        <div id="powerGenerationChart" style="height: 300px;"></div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="timeline-section">
+                    <h3 class="text-xl font-semibold mb-6">Timeline</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Sep 2024</div>
+                            <h4 class="timeline-title">Host Identification</h4>
+                            <p class="timeline-content">Host signs up for power via JRP Eco Solutions.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">May 2025</div>
+                            <h4 class="timeline-title">Project Commissioning</h4>
+                            <p class="timeline-content">Project installed and commissioned on host premise.</p>
+                            <a href="https://www.notion.so/sundaygrids/Kepler-100-Documents-1f17eae2ee3b80008aa1ed59077d4034" target="_blank" class="timeline-link">
+                                View Project Details
+                                <svg width="20" height="20" viewBox="0 0 20 20" class="ml-1">
+                                    <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">May 2025</div>
+                            <h4 class="timeline-title">Integrated with SundayGrids</h4>
+                            <p class="timeline-content">Project opened up for Digital Solar access</p>
+                            <a href="https://sundaygrids.notion.site/What-are-Operator-Managed-Projects-5051c0383853400fb7290b200173ca78" target="_blank" class="timeline-link">
+                                Learn about Operator-Managed Projects
+                                <svg width="20" height="20" viewBox="0 0 20 20" class="ml-1">
+                                    <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">May 2025</div>
+                            <h4 class="timeline-title">Project Open for Reservation</h4>
+                            <p class="timeline-content">This digital solar project is open for reserving capacity.</p>
+                            <a href="https://cdn.sundaygrids.com/assets/projects/0ZMM0OC4JH/Digital_Service_Contract.pdf" target="_blank" class="timeline-link">
+                                View Service Contract
+                                <svg width="20" height="20" viewBox="0 0 20 20" class="ml-1">
+                                    <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Reports Section -->
+                    <div class="bg-utility-grey-50 p-4 rounded-xl mt-6 flex items-start gap-4">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-aluminium-grey-800">Project Reports</h3>
+                            <p class="text-aluminium-grey-500 mt-2">
+                                Get generation reports and other details of the project into your mailbox.
+                                <button class="text-midnight-green-500 font-medium ml-1">Get it Here</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar with Power Generation Info -->
+            <div class="lg:w-[328px] lg:flex-shrink-0">
+                <div class="active-generation">
+                    <div class="mb-5 flex items-center justify-between">
+                        <h3 class="font-semibold text-aluminium-grey-700">Active power generation info</h3>
+                    </div>
+                    <div class="chart-container bg-white rounded-xl border border-aluminium-grey-100 p-4">
+                        <canvas id="powerChart"></canvas>
+                        <div class="power-stats-grid mt-4">
+                            <div class="text-center">
+                                <div class="text-aluminium-grey-700 font-semibold">175.8 kWh</div>
+                                <div class="text-xs text-aluminium-grey-600">Production Today</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-aluminium-grey-700 font-semibold">0.24 kW</div>
+                                <div class="text-xs text-aluminium-grey-600">Current Output</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-aluminium-grey-700 font-semibold">13:34</div>
+                                <div class="text-xs text-aluminium-grey-600">Last Recorded</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secured Generation Banner -->
+        <div class="secured-generation">
+            <div class="secured-generation-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                </svg>
+            </div>
+            <div>
+                <span class="font-semibold">Secured Generation</span>
+                <span class="text-aluminium-grey-600">is enabled for this project.</span>
+            </div>
+            <a href="https://www.notion.so/sundaygrids/Secure-Generation-2c457ef340564b19aa008048b4a4b63c" target="_blank" class="ml-auto text-midnight-green-500">Learn More</a>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="mt-8 flex justify-between">
+            <button onclick="window.history.back()" class="btn btn-link text-aluminium-grey-600">
+                <svg width="20" height="20" viewBox="0 0 20 20" class="inline-block mr-2">
+                    <path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"/>
+                </svg>
+                Back
+            </button>            <a href="select-capacity.html" class="btn btn-success rounded-full px-6 py-2">
+                Next
+                <svg width="20" height="20" viewBox="0 0 20 20" class="inline-block ml-2">
+                    <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Investor Dashboard -->
+                <div class="card p-6 mb-6">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="text-xl font-semibold">Investor Dashboard</h2>
+                        <span class="badge bg-info">This is an example</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">Invested Amount</h6>
+                                    <h4 class="card-title">₹85,000</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">Daily Power Gen</h6>
+                                    <h4 class="card-title">2.4 kW</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">Credits Available</h6>
+                                    <h4 class="card-title">₹3,250</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">Next Withdrawal</h6>
+                                    <h4 class="card-title">15 Jun 2025</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Generation Graph -->
+                    <div class="mt-4">
+                        <h5>Power Generation History</h5>
+                        <canvas id="generationGraph" height="200"></canvas>
+                    </div>
+                </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const testimonials = [
+        {
+            quote: "Solar power is abundant but not very accessible. But now with SundayGrids, I pay for a part of my power bill without having to install panels by myself. No hassles, no fossils.",
+            customer: "Sandeep, customer since 2020",
+            quoteIcon: "https://www.sundaygrids.com/images/solar-rooftops.svg",
+            logoIcon: "https://www.sundaygrids.com/images/the-better-india.svg"
+        },
+        {
+            quote: "SundayGrids made going solar incredibly easy. The process was seamless, and I'm already seeing significant savings on my electricity bills. Highly recommend!",
+            customer: "Priya, customer since 2021",
+            quoteIcon: "https://www.sundaygrids.com/images/solar-rooftops.svg",
+            logoIcon: "https://www.sundaygrids.com/images/the-better-india.svg"
+        },
+        {
+            quote: "I never thought I could afford solar, but SundayGrids offered a flexible plan that fit my budget. It's a great investment for both my wallet and the planet.",
+            customer: "Rahul, customer since 2019",
+            quoteIcon: "https://www.sundaygrids.com/images/solar-rooftops.svg",
+            logoIcon: "https://www.sundaygrids.com/images/the-better-india.svg"
+        }
+    ];
+
+    let currentTestimonial = 0;
+    const testimonialContent = document.querySelector('.testimonial-content');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    const dotsContainer = document.querySelector('.carousel-dots');
+
+    function updateTestimonial() {
+        const { quote, customer, quoteIcon, logoIcon } = testimonials[currentTestimonial];
+        testimonialContent.querySelector('.quote-text').textContent = quote;
+        testimonialContent.querySelector('.customer-info').textContent = customer;
+        testimonialContent.querySelector('.quote-icon').src = quoteIcon;
+        testimonialContent.querySelector('.logo-icon').src = logoIcon;
+        updateDots();
+    }
+
+    function updateDots() {
+        dotsContainer.innerHTML = '';
+        testimonials.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (index === currentTestimonial) {
+                dot.classList.add('active');
+            }
+            dot.addEventListener('click', () => {
+                currentTestimonial = index;
+                updateTestimonial();
+            });
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        updateTestimonial();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        updateTestimonial();
+    });
+
+    updateTestimonial();
+});
+
+// FAQ Section functionality
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const faqItem = button.closest('.faq-item');
+        faqItem.classList.toggle('active');
+    });
+});
+
+// Bill input functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const billInput = document.getElementById('billInput');
+    const savingsRange = document.getElementById('savingsRange');
+    const rangeValue = document.getElementById('rangeValue');
+
+    // Initialize range value display
+    rangeValue.textContent = `${savingsRange.value}%`;
+
+    billInput.addEventListener('input', () => {
+        // Ensure only numeric input
+        billInput.value = billInput.value.replace(/[^0-9]/g, '');
+    });
+
+    savingsRange.addEventListener('input', () => {
+        rangeValue.textContent = `${savingsRange.value}%`;
+    });
+});
+
+// Utility Provider Selection functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const states = [
+        'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
+        'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka',
+        'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram',
+        'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu',
+        'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal',
+        'Andaman and Nicobar Islands', 'Chandigarh', 'Dadra and Nagar Haveli and Daman and Diu',
+        'Delhi', 'Jammu and Kashmir', 'Ladakh', 'Lakshadweep', 'Puducherry'
+    ];    const utilities = {
+        'Maharashtra': ['MSEDCL', 'BEST', 'Tata Power', 'Adani Electricity'],
+        'Delhi': ['BSES Rajdhani', 'BSES Yamuna', 'Tata Power Delhi'],
+        'Karnataka': ['BESCOM', 'MESCOM', 'HESCOM', 'GESCOM', 'CESCOM'],
+        'Telangana': ['Southern Power Distribution Company of Telangana Limited', 'Northern Power Distribution Company of Telangana Limited'],
+        // Add more state-wise utilities as needed
+    };
+
+    const stateSelect = document.querySelector('select:first-of-type');
+    const utilitySelect = document.querySelector('select:last-of-type');
+
+    if (stateSelect && utilitySelect) {
+        // Populate states
+        states.sort().forEach(state => {
+            const option = document.createElement('option');
+            option.value = state;
+            option.textContent = state;
+            stateSelect.appendChild(option);
+        });
+
+        // Handle state selection
+        stateSelect.addEventListener('change', function() {
+            const selectedState = this.value;
+            utilitySelect.innerHTML = '<option value="" selected disabled>Select your power provider</option>';
+            
+            if (utilities[selectedState]) {
+                utilities[selectedState].forEach(utility => {
+                    const option = document.createElement('option');
+                    option.value = utility;
+                    option.textContent = utility;
+                    utilitySelect.appendChild(option);
+                });
+            }
+        });
+    }
+
+    // Back button functionality
+    const backButton = document.querySelector('.btn-link');
+    if (backButton) {
+        backButton.addEventListener('click', function() {
+            window.history.back();
+        });
+    }
+});
+
+// Power Generation Chart
+document.addEventListener('DOMContentLoaded', function() {    const powerChart = document.getElementById('powerChart');
+    if (powerChart) {
+        new Chart(powerChart, {
+            type: 'line',
+            data: {
+                labels: ['06:22', '07:54', '09:22', '10:55', '12:22'],
+                datasets: [{
+                    label: 'Power Generation (kW)',
+                    data: [5, 20, 42, 68, 15],
+                    borderColor: '#198754',
+                    backgroundColor: 'rgba(25, 135, 84, 0.1)',
+                    tension: 0.4,
+                    fill: true,
+                    borderWidth: 2,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#198754',
+                    pointBorderWidth: 2,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 80,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    }
+                }
+            }
+        });
+    }
+});
+
+// Solar Capacity Calculator
+document.addEventListener('DOMContentLoaded', function() {
+    const powerBillInput = document.getElementById('power-bill');
+    const savingsRange = document.getElementById('savings-range');
+    const savingsValue = document.querySelector('.savings-value');
+    
+    // Calculator elements
+    const monthlyValue = document.querySelector('.calculations-panel .calc-item:first-child .calc-value');
+    const reservedSolar = document.querySelector('.calc-grid .calc-item:nth-child(1) .calc-value');
+    const energyProduced = document.querySelector('.calc-grid .calc-item:nth-child(2) .calc-value');
+    const annualSavings = document.querySelector('.calc-grid .calc-item:nth-child(3) .calc-value');
+    const tenYearSavings = document.querySelector('.calc-grid .calc-item:nth-child(4) .calc-value');
+    const finalPayable = document.querySelector('.final-value');
+
+    function updateCalculations() {
+        const billAmount = parseFloat(powerBillInput.value) || 0;
+        const savingsPercent = parseFloat(savingsRange.value) || 0;
+        const discountRate = 6.42; // ₹6.42 per unit
+
+        // Calculate monthly savings
+        const monthlySavings = (billAmount * savingsPercent / 100);
+        monthlyValue.textContent = `₹${monthlySavings.toFixed(2)}`;
+
+        // Calculate reserved solar capacity (W)
+        const solarCapacity = Math.round((monthlySavings / discountRate) * 100);
+        reservedSolar.textContent = `${solarCapacity} W`;
+
+        // Calculate monthly energy production (kWh)
+        const monthlyEnergy = (solarCapacity * 0.12); // Assuming 12% efficiency
+        energyProduced.textContent = `${monthlyEnergy.toFixed(2)} kWh`;
+
+        // Calculate annual savings
+        const annualAmount = monthlySavings * 12;
+        annualSavings.textContent = `₹${annualAmount.toFixed(2)}`;
+
+        // Calculate 10-year savings
+        const tenYearAmount = annualAmount * 10;
+        tenYearSavings.textContent = `₹${tenYearAmount.toFixed(2)}`;
+
+        // Calculate final payable (with 18% GST)
+        const baseAmount = solarCapacity * 100; // Example rate
+        const gstAmount = baseAmount * 0.18;
+        const totalAmount = baseAmount + gstAmount;
+        finalPayable.textContent = `₹${totalAmount.toFixed(2)}`;
+    }
+
+    if (powerBillInput && savingsRange) {
+        powerBillInput.addEventListener('input', function() {
+            updateCalculations();
+        });
+
+        savingsRange.addEventListener('input', function() {
+            savingsValue.textContent = `${this.value}%`;
+            updateCalculations();
+        });
+
+        // Initial calculation
+        updateCalculations();
+    }
+});
+
+// Calculator functionality for select-capacity page
+function initializeCapacityCalculator() {
+    const powerBillInput = document.getElementById('powerBill');
+    const savingsRange = document.getElementById('savingsRange');
+    const rangeValueElement = document.querySelector('.range-value');
+    const monthlyElement = document.getElementById('monthlySavings');
+    const solarCapacityElement = document.getElementById('solarCapacity');
+    const energyElement = document.getElementById('energyProduced');
+    const annualElement = document.getElementById('annualSavings');
+    const tenYearElement = document.getElementById('tenYearSavings');
+    const finalPriceElement = document.getElementById('finalPrice');
+
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-IN', {
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2
+        }).format(amount);
+    }
+
+    function updateCalculations() {
+        const powerBill = parseFloat(powerBillInput.value) || 0;
+        const savingsPercentage = parseInt(savingsRange.value) || 0;
+        
+        // Update range value display
+        rangeValueElement.textContent = `${savingsPercentage}%`;
+        
+        // Calculate monthly savings based on power bill and savings percentage
+        const monthlySavings = (powerBill * savingsPercentage / 100);
+        
+        // Calculate required solar capacity (₹6.42 per unit)
+        const requiredUnits = monthlySavings / 6.42;
+        const solarCapacity = Math.ceil(requiredUnits * 100); // 100W per unit
+        
+        // Calculate monthly energy production (120 kWh per kW)
+        const monthlyEnergy = (solarCapacity / 1000) * 120;
+        
+        // Calculate annual and 10-year savings
+        const annualSavings = monthlySavings * 12;
+        const tenYearSavings = annualSavings * 10;
+        
+        // Calculate final price (₹65 per watt + 18% GST)
+        const basePrice = solarCapacity * 65;
+        const finalPrice = basePrice * 1.18;
+
+        // Update UI
+        monthlyElement.textContent = `₹${formatCurrency(monthlySavings)}`;
+        solarCapacityElement.textContent = `${solarCapacity.toLocaleString('en-IN')} W`;
+        energyElement.textContent = `${formatCurrency(monthlyEnergy)} kWh`;
+        annualElement.textContent = `₹${formatCurrency(annualSavings)}`;
+        tenYearElement.textContent = `₹${formatCurrency(tenYearSavings)}`;
+        finalPriceElement.textContent = `₹${formatCurrency(finalPrice)}`;
+    }
+
+    // Add event listeners
+    powerBillInput.addEventListener('input', updateCalculations);
+    savingsRange.addEventListener('input', updateCalculations);
+
+    // Initialize calculations
+    updateCalculations();
+}
+
+// Initialize calculator when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.capacity-container')) {
+        initializeCapacityCalculator();
+    }
+});
+
+// Function to store calculation data
+function storeCalculationData(data) {
+    localStorage.setItem('solarCalculation', JSON.stringify(data));
+}
+
+// Function to retrieve calculation data
+function getCalculationData() {
+    const data = localStorage.getItem('solarCalculation');
+    return data ? JSON.parse(data) : null;
+}
+
+// Update the review button click handler in select-capacity.html
+document.querySelector('.btn-review').addEventListener('click', function() {
+    const calculationData = {
+        capacityReserved: reservedSolar.textContent,
+        monthlyCredits: monthlySavings.textContent,
+        tenYearSavings: tenYearSavings.textContent,
+        reservationCost: finalPayable.textContent.replace('₹', ''),
+        gstAmount: (parseFloat(finalPayable.textContent.replace('₹', '').replace(/,/g, '')) * 0.18).toFixed(2)
+    };
+    
+    storeCalculationData(calculationData);
+    window.location.href = 'review.html';
+});
+
+// Load data in review.html if available
+document.addEventListener('DOMContentLoaded', function() {
+    const isReviewPage = window.location.pathname.includes('review.html');
+    
+    if (isReviewPage) {
+        const data = getCalculationData();
+        if (data) {
+            document.getElementById('capacityReserved').textContent = data.capacityReserved;
+            document.getElementById('monthlyCredits').textContent = data.monthlyCredits;
+            document.getElementById('tenYearSavings').textContent = data.tenYearSavings;
+            document.getElementById('reservationCost').textContent = `₹${data.reservationCost}`;
+            document.getElementById('gstAmount').textContent = `₹${data.gstAmount}`;
+            document.getElementById('finalPayable').textContent = 
+                `₹${(parseFloat(data.reservationCost) + parseFloat(data.gstAmount)).toFixed(2)}`;
+        }
+
+        // Handle back button in review page
+        document.querySelector('.back-btn').addEventListener('click', function() {
+            window.location.href = 'select-capacity.html';
+        });
+
+        // Handle checkout button
+        document.querySelector('.checkout-btn').addEventListener('click', function() {
+            console.log('Proceeding to checkout...');
+            // Add checkout logic here
+        });
+    }
+});
+    </script>
+</body>
+</html>

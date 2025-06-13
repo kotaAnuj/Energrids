@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>EnergyGrids - Solar Energy Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-white" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="display: inline-block; padding: 0.3125rem 0; margin-right: 1rem; font-size: 1.25rem; line-height: inherit; white-space: nowrap; text-decoration: none;">
+    <img src="logo_2 iuiu.png" alt="Energrids Logo" width="150" style="height: auto; max-width: 100%; vertical-align: middle; border: 0;">
+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">                <ul class="navbar-nav mx-auto">
+                
+                </ul>                <div class="d-flex">
+                    
+                    <a href="login.html" class="btn btn-outline-secondary rounded-pill px-4 align-self-center">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h6 class="text-success">Solar beyond rooftops</h6>
+                    <h1 class="display-4 fw-bold mb-3">Save up on power bills with Digital Solar</h1>
+                    <p class="lead mb-4">Get savings on your bills even if you live in an apartment, rent your home, or own the space</p>
+                    <button class="btn btn-success btn-lg rounded-pill px-4 me-3">Take a quick look</button>
+                    <button class="btn btn-outline-light btn-lg rounded-pill px-4">Talk to us</button>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://www.sundaygrids.com/images/gh-home-hero.svg" alt="Digital Solar" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="how-it-works-section py-5">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-md-6">
+                    <h6 class="text-muted">Step 2</h6>
+                    <h2 class="fw-bold mb-3">Get your credits</h2>
+                    <p class="lead mb-4">Once your solar project is active, you'll start accumulating credits based on the energy produced by your reserved solar panels. These credits are automatically applied to your monthly power bill.</p>
+                    <div class="alert alert-info d-inline-flex align-items-center">
+                        <i class="bi bi-info-circle-fill me-2"></i> Credits are updated monthly
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://www.sundaygrids.com/images/gh-home-hero.svg" alt="Get Credits" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h6 class="text-muted">Step 3</h6>
+                    <h2 class="fw-bold mb-3">Save on your bills</h2>
+                    <p class="lead mb-4">Watch your power bills shrink! Your accumulated solar credits directly reduce the amount you owe, leading to significant savings every month without any hassle.</p>
+                    <div class="alert alert-info d-inline-flex align-items-center">
+                        <i class="bi bi-info-circle-fill me-2"></i> Savings reflect on your next bill
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://www.sundaygrids.com/images/gh-home-hero.svg" alt="Save on Bills" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="feature-item p-4 rounded shadow-sm mb-4">
+                        
+                        <h5>Needs no installation</h5>
+                        <p>No obtrusive structures on roof</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item p-4 rounded shadow-sm mb-4">
+                        
+                        <h5>Go solar instantly</h5>
+                        <p>3 mins, not the usual 3 months</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item p-4 rounded shadow-sm mb-4">
+                        
+                        <h5>Maximise Savings</h5>
+                        <p>20% more than rooftop solar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <section class="forecast-section">
+        <div class="container">
+            <div class="forecast-left">
+                <div class="forecast-header">
+                    <h2 class="text-success">Calculate Your Savings</h2>
+                </div>
+                <h1 class="discount-text">Every unit of electricity from this project generates ₹6.42 discount on your power bill</h1><div class="bill-input-container">
+                    <span class="rupee-symbol">₹</span>
+                    <input type="text" class="bill-input" value="2500" placeholder="Enter avg power bill" inputmode="numeric">
+                </div>
+                <div class="savings-range-container">
+                    <label for="savings-range">Choose savings range (%)</label>
+                    <input type="range" id="savings-range" min="0" max="100" value="75" step="1">
+                    <span class="range-value">75%</span>
+                </div>
+                <!-- Add debug element -->
+                <div id="debug-info" style="display: none;"></div>
+            </div>
+            <div class="forecast-right">
+                <div class="forecast-details">            <div class="detail-card">
+                <div class="card-icon"></div>
+                <div class="card-content">
+                    <p>Your monthly savings</p>
+                    <h3 id="monthly-savings">₹1,875.00</h3>
+                </div>
+            </div>
+            <div class="detail-card small-card">
+                <div class="card-icon"></div>
+                <div class="card-content">
+                    <p>Reserved Solar</p>
+                    <h3 id="reserved-solar">2,574 W</h3>
+                </div>
+            </div>
+            <div class="detail-card small-card">
+                <div class="card-icon"></div>
+                <div class="card-content">
+                    <p>Energy Produced /Mo</p>
+                    <h3 id="energy-produced">292.06 kWh</h3>
+                </div>
+            </div>
+            <div class="detail-card small-card">
+                <div class="card-icon"></div>
+                <div class="card-content">
+                    <p>Annual Savings</p>
+                    <h3 id="annual-savings">₹22,500.00</h3>
+                </div>
+            </div>
+            <div class="detail-card small-card">
+                <div class="card-icon"></div>
+                <div class="card-content">
+                    <p>10 Years Savings</p>
+                    <h3 id="ten-year-savings">₹2,25,000.00</h3>
+                </div>
+            </div>
+            <div class="detail-card large-card">                <div class="card-content">
+                    <p>One-time Reservation Fee</p>
+                    <h3 id="reservation-fee">₹1,28,641.55</h3>
+                </div>
+                <button class="btn btn-success btn-lg rounded-pill px-4 mt-3 w-100" id="get-started-btn">Get Started for Free</button>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Know more about us</h2>
+            <div class="faq-content">
+                <div class="faq-sidebar">
+                    <div class="faq-category active">General</div>
+                    <div class="faq-category">Reserving Solar</div>
+                    <div class="faq-category">Using Credits</div>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is digital solar?
+                            <span class="arrow-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Digital solar allows you to own a part of a solar project without installing panels on your roof. You get credits for the power produced, which reduce your electricity bill.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Where are these digital solar capacity installed?
+                            <span class="arrow-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our digital solar projects are installed in various locations, typically large-scale solar farms, to maximize efficiency and output.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Do I need any approval from my DISCOM to use your service?
+                            <span class="arrow-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, you do not need any approval from your DISCOM. Our service works by providing you with credits that offset your bill, not by directly connecting to your home's electricity supply.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            For a residential user is installing solar on roof or reserving digital solar better?
+                            <span class="arrow-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Digital solar is often better for residential users who cannot install rooftop solar due to space constraints, renting, or other reasons. It offers similar benefits without the hassle of installation and maintenance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-col about-company">
+                <h3>About Energrids</h3>
+                <p>Energrids is a technology solutions provider dedicated to empowering businesses with innovative tools and services. We focus on delivering excellence and driving growth for our clients worldwide.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul>
+                    
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Email: energrids1@gmail.com</p>
+                <p>Phone: +91 234587950</p>
+                <div class="office-address">
+                    <p>Address: Station Road, Warangal</p>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 energrids. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <section class="footer-disclaimer">
+        <div class="disclaimer-container">
+            <p>Disclaimer: This is a demo website. All content, services, and products mentioned are fictional and for illustrative purposes only. No real services are provided. For more information, please refer to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+        </div>
+    </section>    <!-- Load JavaScript at the end of body -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Constants for calculations
+    const RATE_PER_UNIT = 6.42; // ₹6.42 per unit as shown in UI
+    const WATTS_PER_UNIT = 8.81; // Conversion factor for solar capacity
+    const ENERGY_FACTOR = 0.1136; // Monthly energy production factor
+    const RESERVATION_RATE = 50; // ₹50 per watt
+    const GST_RATE = 0.18; // 18% GST
+
+    // Get all required elements
+    const elements = {
+        billInput: document.querySelector('.bill-input'),
+        savingsRange: document.getElementById('savings-range'),
+        rangeValue: document.querySelector('.range-value'),
+        monthlySavings: document.getElementById('monthly-savings'),
+        reservedSolar: document.getElementById('reserved-solar'),
+        energyProduced: document.getElementById('energy-produced'),
+        annualSavings: document.getElementById('annual-savings'),
+        tenYearSavings: document.getElementById('ten-year-savings'),
+        reservationFee: document.getElementById('reservation-fee')
+    };
+
+    // Helper function to format currency in Indian format
+    function formatCurrency(amount) {
+        return '₹' + amount.toLocaleString('en-IN', {
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2
+        });
+    }
+
+    // Main calculation function
+    function updateCalculations() {
+        // Get input values
+        const billAmount = parseFloat(elements.billInput.value.replace(/[^0-9.]/g, '')) || 0;
+        const savingsPercentage = parseInt(elements.savingsRange.value) || 0;
+
+        // Calculate monthly savings
+        const monthlyAmount = (billAmount * savingsPercentage / 100);
+        
+        // Calculate required units and solar capacity
+        const requiredUnits = monthlyAmount / RATE_PER_UNIT;
+        const solarCapacity = Math.round(requiredUnits * WATTS_PER_UNIT);
+        
+        // Calculate energy production
+        const monthlyEnergy = (solarCapacity * ENERGY_FACTOR).toFixed(2);
+        
+        // Calculate all savings
+        const annualAmount = monthlyAmount * 12;
+        const tenYearAmount = annualAmount * 10;
+        
+        // Calculate reservation fee
+        const baseReservationFee = solarCapacity * RESERVATION_RATE;
+        const gstAmount = baseReservationFee * GST_RATE;
+        const totalReservationFee = baseReservationFee + gstAmount;
+
+        // Update UI elements
+        elements.monthlySavings.textContent = formatCurrency(monthlyAmount);
+        elements.reservedSolar.textContent = solarCapacity.toLocaleString('en-IN') + ' W';
+        elements.energyProduced.textContent = monthlyEnergy + ' kWh';
+        elements.annualSavings.textContent = formatCurrency(annualAmount);
+        elements.tenYearSavings.textContent = formatCurrency(tenYearAmount);
+        elements.reservationFee.textContent = formatCurrency(totalReservationFee);
+        elements.rangeValue.textContent = savingsPercentage + '%';
+    }
+
+    // Add event listeners
+    if (elements.billInput) {
+        elements.billInput.addEventListener('input', function(e) {
+            // Only allow numbers and decimal point
+            this.value = this.value.replace(/[^0-9.]/g, '');
+            updateCalculations();
+        });
+    }
+
+    if (elements.savingsRange) {
+        elements.savingsRange.addEventListener('input', function() {
+            updateCalculations();
+        });
+    }
+
+    // Run initial calculation
+    updateCalculations();
+    
+    // Log to verify script is running
+    console.log('Calculator initialized');
+});
+
+// State and Power Provider Selection Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const stateSelect = document.querySelector('select:first-of-type');
+    const utilitySelect = document.querySelector('select:last-of-type');
+
+    if (stateSelect && utilitySelect) {
+        const states = [
+            'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
+            'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka',
+            'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram',
+            'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu',
+            'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal',
+            'Andaman and Nicobar Islands', 'Chandigarh', 'Dadra and Nagar Haveli',
+            'Delhi', 'Jammu and Kashmir', 'Ladakh', 'Lakshadweep', 'Puducherry'
+        ];
+
+        const utilities = {
+            'Maharashtra': ['MSEDCL', 'BEST', 'Tata Power', 'Adani Electricity'],
+            'Delhi': ['BSES Rajdhani', 'BSES Yamuna', 'Tata Power Delhi'],
+            'Karnataka': ['BESCOM', 'MESCOM', 'HESCOM', 'GESCOM'],
+            'Tamil Nadu': ['TANGEDCO', 'TNEB'],
+            'Gujarat': ['Torrent Power', 'UGVCL', 'DGVCL', 'PGVCL'],
+            'Telangana': ['TSSPDCL', 'TSNPDCL'],
+            'Andhra Pradesh': ['APSPDCL', 'APCPDCL', 'APNPDCL'],
+            'Uttar Pradesh': ['UPPCL', 'Noida Power', 'Torrent Power UP'],
+            // Add more states and their utilities as needed
+        };
+
+        // Populate states
+        states.sort().forEach(state => {
+            const option = document.createElement('option');
+            option.value = state;
+            option.textContent = state;
+            stateSelect.appendChild(option);
+        });
+
+        // Handle state selection
+        stateSelect.addEventListener('change', function() {
+            const selectedState = this.value;
+            utilitySelect.innerHTML = '<option value="" selected disabled>Select your power provider</option>';
+            
+            if (utilities[selectedState]) {
+                utilities[selectedState].forEach(utility => {
+                    const option = document.createElement('option');
+                    option.value = utility;
+                    option.textContent = utility;
+                    utilitySelect.appendChild(option);
+                });
+            } else {
+                // For states without specific utilities, add a default option
+                const option = document.createElement('option');
+                option.value = 'state-discom';
+                option.textContent = selectedState + ' State Electricity Board';
+                utilitySelect.appendChild(option);
+            }
+        });
+
+        // Handle form submission
+        const form = stateSelect.closest('form') || stateSelect.closest('div');
+        const nextButton = document.querySelector('.btn-success');
+        if (nextButton) {
+            nextButton.addEventListener('click', function() {
+                if (stateSelect.value && utilitySelect.value) {
+                    // Store selections
+                    localStorage.setItem('selectedState', stateSelect.value);
+                    localStorage.setItem('selectedUtility', utilitySelect.value);
+                    // Redirect to projects page
+                    window.location.href = 'projects.html';
+                } else {
+                    alert('Please select both state and power provider');
+                }
+            });
+        }
+    }
+});
+
+// Projects Page Navigation
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle projects page navigation
+    if (window.location.pathname.includes('projects.html')) {
+        const projectCards = document.querySelectorAll('.project-card');
+        const nextButton = document.querySelector('.btn-success');
+
+        let selectedProject = null;
+
+        projectCards.forEach(card => {
+            card.addEventListener('click', function() {
+                // Remove selection from other cards
+                projectCards.forEach(c => c.classList.remove('selected'));
+                // Add selection to clicked card
+                this.classList.add('selected');
+                selectedProject = this;
+                
+                // Enable next button if a project is selected
+                if (nextButton) {
+                    nextButton.disabled = false;
+                }
+            });
+        });
+
+        if (nextButton) {
+            nextButton.disabled = true; // Initially disabled
+            nextButton.addEventListener('click', function() {
+                if (selectedProject) {
+                    // Store project selection
+                    const projectName = selectedProject.querySelector('h3').textContent.split('•')[0].trim();
+                    localStorage.setItem('selectedProject', projectName);
+                    // Navigate to select capacity page
+                    window.location.href = 'select-capacity.html';
+                } else {
+                    alert('Please select a project to continue');
+                }
+            });
+        }
+    }
+});
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnergyGrids</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+       
+        .progress {
+            border-radius: 0;
+        }
+        .card {
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .form-select:focus {
+            border-color: #198754;
+            box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+        }
+        .btn-success {
+            background-color: #198754;
+            border-color: #198754;
+        }
+        .btn-success:hover {
+            background-color: #157347;
+            border-color: #146c43;
+        }
+        .text-success {
+            color: #198754 !important;
+        }
+        .bg-success {
+            background-color: #198754 !important;
+        }
+        .alert-info {
+            background-color: #e3f2fd;
+            border-color: #1976d2;
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg bg-white" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="display: inline-block; padding: 0.3125rem 0; margin-right: 1rem; font-size: 1.25rem; line-height: inherit; white-space: nowrap; text-decoration: none;">
+    <img src="logo_2 iuiu.png" alt="Energrids Logo" width="150" style="height: auto; max-width: 100%; vertical-align: middle; border: 0;">
+</a>
+            <div class="nav-right">
+                <a href="#" class="nav-link text-dark">Find your Utility</a>
+                <a href="#" class="btn btn-outline-primary rounded-pill">Logout & Exit <i class="fas fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="progress" style="height: 4px;">
+        <div class="progress-bar bg-success" style="width: 33%"></div>
+    </div>
+
+    <main class="container py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="mb-4">Find your power provider</h1>
+                <p class="text-muted mb-4">Select your state and power distribution company below to get started with SundayGrids.</p>
+                
+                <div class="mb-4">
+                    <label class="form-label">State<span class="text-danger">*</span></label>
+                    <select id="stateSelect" class="form-select form-select-lg mb-3" required>
+                        <option value="" selected disabled>Select your state</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Power Provider<span class="text-danger">*</span></label>
+                    <select id="utilitySelect" class="form-select form-select-lg mb-3" required>
+                        <option value="" selected disabled>Select your power provider</option>
+                    </select>
+                    <div class="text-muted small">
+                        <i class="fas fa-info-circle me-1"></i>
+                        Utilities such as DNHPDCL, JBVNL, MePDCL, Lakshadweep, and Torrent Power are listed under Others.
+                    </div>
+                    <div class="mt-2">
+                        <span class="text-muted">To view the full list or inform if your utility is missing, </span>
+                        <a href="#" class="text-success text-decoration-none">click here</a>
+                    </div>
+                </div>
+
+                <div id="statusMessage" class="alert alert-info d-none" role="alert">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <span id="statusText"></span>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded-circle bg-light p-2 me-2">
+                                        <i class="fas fa-file-invoice-dollar text-success" style="font-size: 24px;"></i>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Manage bills here</h5>
+                                <p class="card-text text-muted">Pay your power bill through SundayGrids to apply credits onto the bill amount</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded-circle bg-light p-2 me-2">
+                                        <i class="fas fa-check-circle text-success" style="font-size: 24px;"></i>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">No extra steps</h5>
+                                <p class="card-text text-muted">If your power provider is listed, you are good to go. No additional permissions from utility required.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded-circle bg-light p-2 me-2">
+                                        <i class="fas fa-exchange-alt text-success" style="font-size: 24px;"></i>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Multiple utilities</h5>
+                                <p class="card-text text-muted">In case you move houses or change cities, worry not, you could always change your linked utility</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <button type="button" class="btn btn-link text-muted p-0" id="backButton">
+                <i class="fas fa-arrow-left me-1"></i> Back
+            </button>
+            <button type="button" class="btn btn-success rounded-pill px-4 py-2" id="continueButton" disabled onclick="window.location.href='projects.html'">
+                Continue <i class="fas fa-arrow-right ms-1"></i>
+            </button>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Comprehensive state-wise utilities data
+        const statesAndUtilities = {
+            'Andhra Pradesh': [
+                'APEPDCL (Eastern Power Distribution Company)',
+                'APCPDCL (Central Power Distribution Company)', 
+                'APSPDCL (Southern Power Distribution Company)'
+            ],
+            'Arunachal Pradesh': [
+                'APSEEB (Arunachal Pradesh State Electricity Board)'
+            ],
+            'Assam': [
+                'APDCL (Assam Power Distribution Company)',
+                'APGCL (Assam Power Generation Corporation)'
+            ],
+            'Bihar': [
+                'NBPDCL (North Bihar Power Distribution Company)',
+                'SBPDCL (South Bihar Power Distribution Company)'
+            ],
+            'Chhattisgarh': [
+                'CSPDCL (Chhattisgarh State Power Distribution Company)',
+                'CSEB (Chhattisgarh State Electricity Board)'
+            ],
+            'Delhi': [
+                'BSES Rajdhani Power Limited',
+                'BSES Yamuna Power Limited',
+                'Tata Power Delhi Distribution Limited'
+            ],
+            'Goa': [
+                'Goa Electricity Department'
+            ],
+            'Gujarat': [
+                'DGVCL (Dakshin Gujarat Vij Company Limited)',
+                'MGVCL (Madhya Gujarat Vij Company Limited)',
+                'PGVCL (Paschim Gujarat Vij Company Limited)',
+                'UGVCL (Uttar Gujarat Vij Company Limited)',
+                'Torrent Power Limited'
+            ],
+            'Haryana': [
+                'DHBVN (Dakshin Haryana Bijli Vitran Nigam)',
+                'UHBVN (Uttar Haryana Bijli Vitran Nigam)'
+            ],
+            'Himachal Pradesh': [
+                'HPSEB (Himachal Pradesh State Electricity Board)'
+            ],
+            'Jammu and Kashmir': [
+                'JKPDD (Jammu & Kashmir Power Development Department)'
+            ],
+            'Jharkhand': [
+                'JBVNL (Jharkhand Bijli Vitran Nigam Limited)'
+            ],
+            'Karnataka': [
+                'BESCOM (Bangalore Electricity Supply Company)',
+                'CHESCOM (Chamundeshwari Electricity Supply Corporation)',
+                'GESCOM (Gulbarga Electricity Supply Company)',
+                'HESCOM (Hubli Electricity Supply Company)',
+                'MESCOM (Mangalore Electricity Supply Company)'
+            ],
+            'Kerala': [
+                'KSEB (Kerala State Electricity Board)'
+            ],
+            'Ladakh': [
+                'LAHDC (Ladakh Autonomous Hill Development Council)'
+            ],
+            'Madhya Pradesh': [
+                'MPMKVVCL (Madhya Pradesh Madhya Kshetra Vidyut Vitaran)',
+                'MPPKVVCL (Madhya Pradesh Poorv Kshetra Vidyut Vitaran)',
+                'MPPKVVCL (Madhya Pradesh Paschim Kshetra Vidyut Vitaran)'
+            ],
+            'Maharashtra': [
+                'MSEDCL (Maharashtra State Electricity Distribution)',
+                'Adani Electricity Mumbai Limited',
+                'Tata Power Company Limited'
+            ],
+            'Manipur': [
+                'MSPDCL (Manipur State Power Distribution Company)'
+            ],
+            'Meghalaya': [
+                'MeSEB (Meghalaya State Electricity Board)'
+            ],
+            'Mizoram': [
+                'PDOH (Power Department of Mizoram)'
+            ],
+            'Nagaland': [
+                'PDNH (Power Department of Nagaland)'
+            ],
+            'Odisha': [
+                'CESU (Central Electricity Supply Utility)',
+                'NESCO (North Eastern Electricity Supply Company)',
+                'SOUTHCO (Southern Electricity Supply Company)',
+                'WESCO (Western Electricity Supply Company)'
+            ],
+            'Punjab': [
+                'PSPCL (Punjab State Power Corporation Limited)'
+            ],
+            'Rajasthan': [
+                'AVVNL (Ajmer Vidyut Vitran Nigam Limited)',
+                'JDVVNL (Jodhpur Vidyut Vitran Nigam Limited)',
+                'JaVVNL (Jaipur Vidyut Vitran Nigam Limited)'
+            ],
+            'Sikkim': [
+                'SEB (Sikkim Electricity Board)'
+            ],
+            'Tamil Nadu': [
+                'TNEB (Tamil Nadu Electricity Board)',
+                'TANGEDCO (Tamil Nadu Generation and Distribution Corporation)'
+            ],
+            'Telangana': [
+                'TSNPDCL (Northern Power Distribution Company)',
+                'TSSPDCL (Southern Power Distribution Company)',
+                'TSPDC (Telangana State Power Development Corporation)'
+            ],
+            'Tripura': [
+                'TSECL (Tripura State Electricity Corporation Limited)'
+            ],
+            'Uttar Pradesh': [
+                'DVVNL (Dakshinanchal Vidyut Vitran Nigam)',
+                'KESCO (Kanpur Electricity Supply Company)',
+                'MVVNL (Madhyanchal Vidyut Vitran Nigam)',
+                'PUVVNL (Purvanchal Vidyut Vitran Nigam)',
+                'PaVVNL (Paschimanchal Vidyut Vitran Nigam)'
+            ],
+            'Uttarakhand': [
+                'UPCL (Uttarakhand Power Corporation Limited)'
+            ],
+            'West Bengal': [
+                'WBSEDCL (West Bengal State Electricity Distribution)',
+                'CESC Limited (Calcutta Electric Supply Corporation)'
+            ],
+            'Andaman and Nicobar Islands': [
+                'Electricity Department, A&N Islands'
+            ],
+            'Chandigarh': [
+                'Chandigarh Electricity Department'
+            ],
+            'Dadra and Nagar Haveli and Daman and Diu': [
+                'DNH&DD Electricity Department'
+            ],
+            'Lakshadweep': [
+                'Lakshadweep Electricity Department'
+            ],
+            'Puducherry': [
+                'Puducherry Electricity Department'
+            ]
+        };
+
+        // Initialize the application when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePowerProviderSelection();
+        });
+
+        function initializePowerProviderSelection() {
+            const stateSelect = document.getElementById('stateSelect');
+            const utilitySelect = document.getElementById('utilitySelect');
+            const continueButton = document.getElementById('continueButton');
+            const backButton = document.getElementById('backButton');
+            const statusMessage = document.getElementById('statusMessage');
+            const statusText = document.getElementById('statusText');
+
+            if (!stateSelect || !utilitySelect) {
+                console.error('Required select elements not found');
+                return;
+            }
+
+            // Populate states dropdown
+            populateStates();
+
+            // Event listeners
+            stateSelect.addEventListener('change', handleStateChange);
+            utilitySelect.addEventListener('change', handleUtilityChange);
+            backButton.addEventListener('click', handleBackButton);
+
+            function populateStates() {
+                // Clear existing options except the first one
+                stateSelect.innerHTML = '<option value="" selected disabled>Select your state</option>';
+                
+                // Sort states alphabetically
+                const sortedStates = Object.keys(statesAndUtilities).sort();
+                
+                sortedStates.forEach(state => {
+                    const option = document.createElement('option');
+                    option.value = state;
+                    option.textContent = state;
+                    stateSelect.appendChild(option);
+                });
+
+                console.log('States populated:', sortedStates.length);
+            }
+
+            function handleStateChange() {
+                const selectedState = stateSelect.value;
+                console.log('State selected:', selectedState);
+
+                // Reset utility dropdown
+                utilitySelect.innerHTML = '<option value="" selected disabled>Select your power provider</option>';
+                utilitySelect.disabled = false;
+                continueButton.disabled = true;
+
+                // Hide status message
+                statusMessage.classList.add('d-none');
+
+                if (selectedState && statesAndUtilities[selectedState]) {
+                    const utilities = statesAndUtilities[selectedState];
+                    
+                    utilities.forEach(utility => {
+                        const option = document.createElement('option');
+                        option.value = utility;
+                        option.textContent = utility;
+                        utilitySelect.appendChild(option);
+                    });
+
+                    console.log('Utilities populated for', selectedState, ':', utilities.length);
+                    
+                    // Show success message
+                    showStatusMessage(`Found ${utilities.length} power provider(s) for ${selectedState}`, 'success');
+                } else {
+                    // Show not available message
+                    const option = document.createElement('option');
+                    option.value = "not-available";
+                    option.textContent = "Service not available in this state";
+                    option.disabled = true;
+                    utilitySelect.appendChild(option);
+                    
+                    showStatusMessage('Service not currently available in this state. We are working to expand our coverage.', 'warning');
+                }
+            }
+
+            function handleUtilityChange() {
+                const selectedUtility = utilitySelect.value;
+                console.log('Utility selected:', selectedUtility);
+
+                if (selectedUtility && selectedUtility !== 'not-available') {
+                    continueButton.disabled = false;
+                    showStatusMessage('Great! You can now continue to the next step.', 'success');
+                } else {
+                    continueButton.disabled = true;
+                }
+            }
+
+            function handleBackButton() {
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    // Fallback navigation
+                    window.location.href = 'index.html';
+                }
+            }
+
+            function showStatusMessage(message, type) {
+                statusText.textContent = message;
+                statusMessage.className = `alert alert-${type === 'success' ? 'success' : type === 'warning' ? 'warning' : 'info'}`;
+                statusMessage.classList.remove('d-none');
+            }
+        }
+
+        // Additional utility functions for better user experience
+        function validateForm() {
+            const stateSelect = document.getElementById('stateSelect');
+            const utilitySelect = document.getElementById('utilitySelect');
+            
+            return stateSelect.value && utilitySelect.value && utilitySelect.value !== 'not-available';
+        }
+
+        // Enhanced continue button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const continueButton = document.getElementById('continueButton');
+            if (continueButton) {
+                continueButton.addEventListener('click', function() {
+                    if (validateForm()) {
+                        // Store selected values for next page
+                        const selectedState = document.getElementById('stateSelect').value;
+                        const selectedUtility = document.getElementById('utilitySelect').value;
+                        
+                        // You can store this data for the next page
+                        console.log('Proceeding with:', { selectedState, selectedUtility });
+                        
+                        // Navigate to next page
+                        window.location.href = 'projects.html';
+                    } else {
+                        alert('Please select both state and power provider to continue.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
